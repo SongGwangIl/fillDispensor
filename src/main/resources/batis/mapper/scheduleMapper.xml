@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <mapper namespace="schedule">
+
+  	<select id="total" resultType="Integer">
+  		SELECT COUNT(*) FROM (<include refid="search"></include>) sub
+  	</select>
+  	
+  	<select id="list" resultType="schedule">
+  		SELECT * FROM schedule
+		WHERE userId='USER1'
+  	</select>
+  	
+  	<insert id="add">
+  		INSERT INTO SCHEDULE VALUES(SCHE_SEQ.NEXTVAL, 'USER1', #{scheTitle}, #{scheSelect}, #{scheStartDate}, #{scheEndDate});
+  	</insert>
+
+  	<select id="item" resultType="schedule">
+  		SELECT * FROM book WHERE SCHEID=#{scheId}
+  	</select>
+  	
+  	 	
+  </mapper>
+  
