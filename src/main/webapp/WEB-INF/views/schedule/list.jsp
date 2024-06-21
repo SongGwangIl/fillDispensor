@@ -8,5 +8,8 @@
 </head>
 <body>
 
+schedule list의 테스트 페이지...........
+(현재 로그인해야만 접근 가능)
+
 </body>
 </html>

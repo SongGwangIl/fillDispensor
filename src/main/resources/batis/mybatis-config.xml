@@ -8,5 +8,7 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="kr.ac.kopo.com.LoginVO" alias="LoginVO"/>
+		<typeAlias type="kr.ac.kopo.schedule.service.ScheduleVO" alias="ScheduleVO"/>
 	</typeAliases>
+	
 </configuration>

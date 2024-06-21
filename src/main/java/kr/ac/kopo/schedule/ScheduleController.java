@@ -12,13 +12,13 @@ import kr.ac.kopo.com.LoginVO;
 import kr.ac.kopo.schedule.service.ScheduleService;
 import kr.ac.kopo.schedule.service.ScheduleVO;
 
-@Controller
+@Controller("/schedule")
 public class ScheduleController {
 
 	@Autowired
 	ScheduleService scheduleService;
 	
-	@RequestMapping(path = "/list.do", method = RequestMethod.GET)
+	@RequestMapping(path = "schedule/list.do", method = RequestMethod.GET)
 	public String list(LoginVO vo, Model model) {
 		List<ScheduleVO> lvo = scheduleService.list(vo);
 		model.addAttribute("lvo",lvo);
