@@ -1,0 +1,76 @@
+h1 {
+	display: block;
+	text-align: center;
+}
+#wrap{
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+#btn{
+    width: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: #888;
+    margin-bottom: 20px;
+}
+.input{
+    display: block;
+}
+.select {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.select input[type=radio]{
+    display: none;
+}
+.select label{
+    display: inline-block;
+    cursor: pointer;
+    height: 24px;
+    width: 90px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:20px;
+    margin-left: 20px;
+    background-color: #fff;
+    color: #333;
+    width: 100px;
+    padding: 5px;
+}
+.select>label{
+	margin-left: 20px;
+}
+.hover:hover{
+    background-color: #eee;
+}
+.select input[type=radio]:checked+label{
+    background-color: #77c;
+}
+button {
+	width: 150px;
+	font-size: 20px;
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+}
+span{
+	display: inline-block;
+	width: 150px;
+	font-size: 20px;
+	padding-left: 10px;
+}
+input, p{
+	font-size: 20px;
+}
+input {
+	width: 300px;
+	margin-top: 10px;
+}
+p {
+	padding-left: 10px;
+}

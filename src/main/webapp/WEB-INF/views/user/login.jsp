@@ -5,13 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/login.css" type="text/css">
 </head>
 <body>
-	<h1>로그인</h1>
-	<form action="${pageContext.request.contextPath}/login.do" method="post">
-		아이디: <input type="text" name="userId"><br>
-		비밀번호: <input type="password" name="userPass"><br>
-		<input type="submit" value="로그인">
-	</form>
+	<div id="wrap">
+		<h1>로그인</h1>
+		<form action="${pageContext.request.contextPath}/login" method="post">
+			<div class="input">
+                <span>아이디</span><input type="text" name="userId"><br>
+                <span>비밀번호</span><input type="password" name="userPwd"><br>
+                <input type="submit" value="로그인" id="btn">
+            </div>
+		</form>
+		<a href="${pageContext.request.contextPath}/singup">회원가입</a><br>
+		<a href="#">아이디를 잃어버렸습니까?</a><br>
+		<a href="#">비밀번호를 잃어버렸습니까?</a>
+	</div>
 </body>
 </html>

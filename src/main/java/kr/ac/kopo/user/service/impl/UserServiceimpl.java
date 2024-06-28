@@ -1,11 +1,9 @@
 package kr.ac.kopo.user.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.ac.kopo.com.LoginVO;
+import kr.ac.kopo.user.UserVO;
 import kr.ac.kopo.user.service.UserService;
 
 @Service
@@ -15,15 +13,16 @@ public class UserServiceimpl implements UserService{
 	UserDAO userdao;
 
 	@Override
-	public List<LoginVO> list(LoginVO vo) {
+	public int add(UserVO vo) {
 		
-		return userdao.list();
+		return userdao.add(vo);
 	}
-	
-	
-	public LoginVO selectList(LoginVO vo) {
+
+
+	@Override
+	public UserVO login(UserVO vo) {
 		
-		return userdao.selectList(vo);
+		return userdao.login(vo);
 	}
 
 }
