@@ -11,4 +11,6 @@ public interface ScheduleDAO {
 	
 	List<ScheduleVO> list();
 
+	int add(ScheduleVO vo);
+
 }

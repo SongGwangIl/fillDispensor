@@ -19,7 +19,7 @@
 
 <body>
 	<div id=insertList">
-		<form action="${pageContext.request.contextPath}/schedule/add.do}" method="post">
+		<form action="${pageContext.request.contextPath}/schedule/add.do" method="post">
 			<fieldset>
 				<legend>스케쥴 등록</legend>
 					<ul>
@@ -33,13 +33,13 @@
 					<ul>
 						<label for="scheSelect">처방기간</label>
 						<select>
-							<option value="week1" selected>1주</option>
-							<option value="week2">2주</option>
-							<option value="week3">3주</option>
-							<option value="week4">4주</option>
-							<option value="week5">5주</option>
-							<option value="week6">6주</option>
-							<option value="other">직접 입력</option>
+							<option value="1주" selected>1주</option>
+							<option value="2주">2주</option>
+							<option value="3주">3주</option>
+							<option value="4주">4주</option>
+							<option value="5주">5주</option>
+							<option value="6주">6주</option>
+							<option value="기타">직접 입력</option>
 						</select>	
 						스크립트 추가예정
 					</ul>

@@ -19,6 +19,12 @@
 		SELECT * FROM SCHEDULE
 	</select>
 
+	<insert id="add">
+	INSERT INTO SCHEDULE
+	(SCHE_ID, USER_ID, SCHE_TITLE, SCHE_SELECT, SCHE_START_DATE, SCHE_END_DATE)
+	VALUES
+	(CONCAT('sche_', LPAD(NEXT VALUE FOR SQ_SCHE, 5, '0')), 'id1', #{scheTitle}, #{scheSelect}, #{scheStartDate}, #{scheEndDate})
+	</insert>
 
 
 

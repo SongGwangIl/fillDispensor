@@ -7,4 +7,6 @@ import kr.ac.kopo.com.LoginVO;
 public interface ScheduleService {
 
 	List<ScheduleVO> list(LoginVO vo);
+
+	int add(ScheduleVO vo);
 }
