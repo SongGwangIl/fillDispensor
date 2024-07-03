@@ -5,10 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.ac.kopo.com.LoginVO;
 import kr.ac.kopo.schedule.service.ScheTimeService;
 import kr.ac.kopo.schedule.service.ScheTimeVO;
-import kr.ac.kopo.schedule.service.ScheduleService;
 import kr.ac.kopo.schedule.service.ScheduleVO;
 
 @Service
@@ -19,7 +17,7 @@ public class ScheTimeServiceImpl implements ScheTimeService {
 
 	@Override
 	public List<ScheTimeVO> list(ScheduleVO vo) {
-		return scheTimeDAO.list();
+		return scheTimeDAO.list(vo);
 		// 로그인한 사람의 리스트만 보여야 함... 일단 지금은 생략
 	}
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.schedule.service.ScheTimeService;
+import kr.ac.kopo.schedule.service.ScheTimeVO;
 import kr.ac.kopo.schedule.service.ScheduleVO;
 
 @Controller("/schedule/time")
@@ -24,7 +25,7 @@ public class ScheTimeController {
 	}
 
 	@PostMapping("/addPlus.do")
-	public String addPlus(ScheduleVO vo, HttpSession session) {
+	public String addPlus(ScheTimeVO vo, HttpSession session) {
 //		ScheduleVO mvo = (ScheduleVO) session.getAttribute("loginUser"); //세션에 등록되었는지 확인
 //		vo.setUserId(mvo.getUserId());
 
@@ -37,7 +38,7 @@ public class ScheTimeController {
 	}
 
 	@PostMapping("/addFinish.do")
-	public String addFinish(ScheduleVO vo, HttpSession session) {
+	public String addFinish(ScheTimeVO vo, HttpSession session) {
 //		ScheduleVO mvo = (ScheduleVO) session.getAttribute("loginUser"); //세션에 등록되었는지 확인
 //		vo.setUserId(mvo.getUserId());
 

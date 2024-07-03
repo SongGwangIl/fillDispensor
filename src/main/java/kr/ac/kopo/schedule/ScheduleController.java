@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.ac.kopo.com.LoginVO;
 import kr.ac.kopo.schedule.service.ScheduleService;
 import kr.ac.kopo.schedule.service.ScheduleVO;
+import kr.ac.kopo.user.UserVO;
 
 @Controller("/schedule")
 @RequestMapping("/schedule")
@@ -23,7 +23,7 @@ public class ScheduleController {
 	ScheduleService scheduleService;
 	
 	@GetMapping("/list.do")
-	public String list(LoginVO vo, Model model, HttpSession session) {
+	public String list(UserVO vo, Model model, HttpSession session) {
 //		ScheduleVO mvo = (ScheduleVO) session.getAttribute("loginUser"); //세션에 등록되었는지 확인
 //		vo.setUserId(mvo.getUserId());
 		

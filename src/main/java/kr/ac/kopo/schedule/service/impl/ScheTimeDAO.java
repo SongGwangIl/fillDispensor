@@ -10,8 +10,8 @@ import kr.ac.kopo.schedule.service.ScheduleVO;
 @Mapper
 public interface ScheTimeDAO {
 	
-	List<ScheTimeVO> list();
+	List<ScheTimeVO> list(ScheduleVO vo);
 
-	int add(ScheduleVO vo);
+	int add(ScheTimeVO vo);
 
 }
