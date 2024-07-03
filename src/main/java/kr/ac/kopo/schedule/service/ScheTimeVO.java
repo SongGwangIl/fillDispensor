@@ -12,7 +12,7 @@ public class ScheTimeVO {
 	private String scheId;
 	private LocalTime timeArlam;
 	private LocalTime timeLimit;
-	private int rearlamCount;
-	private int rearlamTime;
-	private char medLocation;
+	private int reArlamCount;
+	private int reArlamTime;
+	private int medLocation;
 }

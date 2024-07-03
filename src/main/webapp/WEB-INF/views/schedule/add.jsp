@@ -24,15 +24,15 @@
 				<legend>스케쥴 등록</legend>
 					<ul>
 						<label for="scheTitle">스케쥴 제목</label>
-						<input type="text" id="scheTitle">  
+						<input type="text" id="scheTitle" name="scheTitle">  
 					</ul>
 					<ul>
 						<label for="scheStartDate">처방일자</label>
-						<input type="date" id="scheStartDate">	
+						<input type="date" id="scheStartDate" name="scheStartDate">	
 					</ul>
 					<ul>
 						<label for="scheSelect">처방기간</label>
-						<select>
+						<select name="scheSelect">
 							<option value="1주" selected>1주</option>
 							<option value="2주">2주</option>
 							<option value="3주">3주</option>
@@ -45,11 +45,12 @@
 					</ul>
 					<ul>
 						<label for="scheEndDate">만료일자</label>
-						<input type="date" id="scheEndDate">
+						<input type="date" id="scheEndDate" name="scheEndDate">
 					</ul>
 					
 				</label>
 			<input type="submit" value="등록">
+			
 			</fieldset>
 		</form>
 	</div>

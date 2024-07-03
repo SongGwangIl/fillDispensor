@@ -19,6 +19,7 @@
 	제목 : <c:out value="${vo.scheTitle}"/> <button>수정</button> <br>
 	처방기간 : <c:out value="${vo.scheSelect}"/> <br>
 	<c:out value="${vo.scheStartDate}"/> ~ 	<c:out value="${vo.scheEndDate}"/> <br><br>
+	<!-- forEach문 추가하여 시간까지 표시, 시간 정보가 없다면 없음 경고문구 표시 -->
 </c:forEach>
 
 

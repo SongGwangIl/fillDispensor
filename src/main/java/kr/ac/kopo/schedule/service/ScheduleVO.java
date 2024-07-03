@@ -1,6 +1,6 @@
 package kr.ac.kopo.schedule.service;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,9 +11,7 @@ public class ScheduleVO {
 	private String userId;
 	private String scheTitle;
 	private String scheSelect;
-	private LocalDate scheStartDate;
-	private LocalDate scheEndDate;
+	private String scheStartDate;
+	private String scheEndDate;
 	private char scheDateExpires;
-	
-
 }
