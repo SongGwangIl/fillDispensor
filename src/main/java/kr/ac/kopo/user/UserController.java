@@ -61,11 +61,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(path = "/singup", method = RequestMethod.POST)
-	public String add(UserVO vo, HttpServletResponse response) throws IOException {
+	public String add(UserVO vo, HttpServletRequest request) {
 		
 		userService.add(vo);
 		
-		return "redirect:/login";			
+		request.setAttribute("msg", "회원가입 되었습니다.");
+		request.setAttribute("url", "/kopo/cover");		
+		
+		return "user/alert";			
 	}
 	
 	@ResponseBody

@@ -30,7 +30,7 @@
 				</li>
 				<li>
                 	<label class="label">이메일</label>
-                	<input type="email" name="userEmail" placeholder="이메일 입력" id="email" onkeydown='autoEmail("email",this.value)' required><br>
+                	<input type="email" name="userEmail" placeholder="이메일 입력" id="email" onkeyup='autoEmail("email",this.value)' required><br>
 				</li>
 				<li>
                 	<label class="label">사용방법선택</label>
