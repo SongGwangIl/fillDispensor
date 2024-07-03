@@ -11,11 +11,16 @@
 	<div id="wrap">
 		<h1>로그인</h1>
 		<form action="${pageContext.request.contextPath}/login" method="post">
-			<div class="input">
-                <span>아이디</span><input type="text" name="userId"><br>
-                <span>비밀번호</span><input type="password" name="userPwd"><br>
-                <input type="submit" value="로그인" id="btn">
-            </div>
+			<ul class="input">
+				<li>
+	                <label>아이디</label>
+	                <input type="text" name="userId">
+	            <li>
+	                <label>비밀번호</label>
+	                <input type="password" name="userPwd">
+				</li>
+            </ul>
+	    	<input type="submit" value="로그인" id="btn">				
 		</form>
 		<a href="${pageContext.request.contextPath}/singup">회원가입</a><br>
 		<a href="#">아이디를 잃어버렸습니까?</a><br>

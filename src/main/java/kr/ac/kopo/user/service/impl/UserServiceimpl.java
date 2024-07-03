@@ -25,4 +25,11 @@ public class UserServiceimpl implements UserService{
 		return userdao.login(vo);
 	}
 
+
+	@Override
+	public String checkId(String userId) {
+
+		return userdao.checkId(userId);
+	}
+
 }

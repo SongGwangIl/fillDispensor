@@ -20,4 +20,7 @@
   	INSERT INTO User (USER_ID, USER_PWD, USER_EMAIL, USER_VALID, DEVICE_REGIST, USER_SELECT)
   	VALUES (#{userId}, #{userPwd}, #{userEmail}, #{userValid}, #{deviceRegist}, #{userSelect})
   </insert>
+  <select id="checkId" resultType="String">
+  	SELECT COUNT(*) FROM user WHERE user_id = #{userId}
+  </select>
 </mapper>
