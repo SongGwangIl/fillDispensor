@@ -15,7 +15,7 @@
 			<ul class="input">
 				<li>
                 	<label class="label">아이디</label>
-                	<input type="text" name="userId" id="userId" placeholder="4-20자리 영문과 숫자로 입력" required><br>				
+                	<input type="text" name="userId" id="userId" placeholder="6-15자리 영문과 숫자로 입력" required><br>				
                 	<p id="idCheck"></p>
 				</li>
 				<li>
@@ -51,7 +51,7 @@
 		</form>
 	</div>
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.7.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/add.js"></script>
 </body>
 </html>
