@@ -9,7 +9,7 @@ import kr.ac.kopo.schedule.service.ScheduleVO;
 @Mapper
 public interface ScheduleDAO {
 	
-	List<ScheduleVO> list();
+	List<ScheduleVO> list(String userId);
 
 	int add(ScheduleVO vo);
 

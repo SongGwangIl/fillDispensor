@@ -10,8 +10,8 @@
 <title>임시메인페이지</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	<h1>임시메인페이지</h1>
-	<c:url var="regUrl" value="/schedule/list.do" ></c:url>
-	<a href="${regUrl}">스케쥴 리스트로 가기</a>
+
 </body>
 </html>

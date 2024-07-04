@@ -24,10 +24,9 @@ public class ScheduleController {
 	
 	@GetMapping("/list.do")
 	public String list(UserVO vo, Model model, HttpSession session) {
-//		String userId = (String)session.getAttribute("loginUser");
-//		vo.setUserId(mvo.getUserId());
-		
-		List<ScheduleVO> lvo = scheduleService.list(vo);
+		UserVO loginUser = (UserVO)session.getAttribute("loginUser");
+		String userId = loginUser.getUserId();
+		List<ScheduleVO> lvo = scheduleService.list(userId);
 		model.addAttribute("lvo",lvo);
 		return "schedule/list";
 	}
@@ -39,8 +38,9 @@ public class ScheduleController {
 	
 	@PostMapping("/add.do")
 	public String add(ScheduleVO vo, HttpSession session) {
-//		ScheduleVO mvo = (ScheduleVO) session.getAttribute("loginUser"); //세션에 등록되었는지 확인
-//		vo.setUserId(mvo.getUserId());
+		UserVO loginUser = (UserVO)session.getAttribute("loginUser");
+		String userId = loginUser.getUserId();
+		vo.setUserId(userId);
 		
 		int num = scheduleService.add(vo); 
 		System.out.println(num + "개의 스케쥴 추가 완료");

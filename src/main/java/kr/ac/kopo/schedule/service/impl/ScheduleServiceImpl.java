@@ -10,14 +10,14 @@ import kr.ac.kopo.schedule.service.ScheduleVO;
 import kr.ac.kopo.user.UserVO;
 
 @Service
-public class ScheduleserviceImpl implements ScheduleService {
+public class ScheduleServiceImpl implements ScheduleService {
 	
 	@Autowired
 	ScheduleDAO scheduleDAO;
 	
 	@Override
-	public List<ScheduleVO> list(UserVO vo) {
-		return scheduleDAO.list();
+	public List<ScheduleVO> list(String userId) {
+		return scheduleDAO.list(userId);
 		// 로그인한 사람의 리스트만 보여야 함... 일단 지금은 생략
 	}
 

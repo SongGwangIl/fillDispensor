@@ -6,7 +6,7 @@ import kr.ac.kopo.user.UserVO;
 
 public interface ScheduleService {
 
-	List<ScheduleVO> list(UserVO vo);
+	List<ScheduleVO> list(String userId);
 
 	int add(ScheduleVO vo);
 }

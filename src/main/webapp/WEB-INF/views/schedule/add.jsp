@@ -17,9 +17,7 @@
 
 </head>
 
-<!-- 야매 헤더 -->
-<c:out value="${USER_INFO.id}"/> 님 환영합니다.
-<button>로그아웃</button> <br>
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 <body>
 	<div id=insertList">

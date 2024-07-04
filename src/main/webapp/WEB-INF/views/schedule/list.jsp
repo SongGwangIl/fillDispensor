@@ -10,9 +10,7 @@
 </head>
 <body>
 
-<!-- 야매 헤더 -->
-<c:out value="${USER_INFO.id}"/> 님 환영합니다.
-<button>로그아웃</button> <br>
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 <h1>복약 정보 확인</h1>
 <a href='${pageContext.request.contextPath}/schedule/add.do'>신규 정보 등록</a>
