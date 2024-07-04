@@ -12,7 +12,10 @@
 <c:out value="${loginUser.userId}"/> 님 환영합니다.
 | <a href='${pageContext.request.contextPath}/login'>로그아웃</a>
 	| <c:url var="regUrl" value="/schedule/list.do" ></c:url>
-	<a href="${regUrl}">스케쥴 리스트</a><br>
+	<a href="${regUrl}">스케쥴 리스트</a>
+	| <c:url var="recordUrl" value="/record/list.do" ></c:url>
+	<a href="${recordUrl}"> 복약 기록 조회</a><br>
+	
 
 </body>
 </html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ac.kopo.record.service.impl.RecordDAO">
+
+	<resultMap type="ScheduleVO" id="ScheduleMap">
+		<id column="SCHE_ID" property="scheId"/>
+		<result column="USER_ID" property="userId"/>
+		<result column="SCHE_TITLE" property="scheTitle"/>
+		<result column="SCHE_SELECT" property="scheSelect"/>
+		<result column="SCHE_START_DATE" property="scheStartDate"/>
+		<result column="SCHE_END_DATE" property="scheEndDate"/>
+		<result column="SCHE_DATE_EXPIRES" property="scheDateExpires"/>
+	</resultMap>
+	
+	<resultMap type="ScheTimeVO" id="scheTimeMap">
+		<id column="TIME_ID" property="timeId"/>
+		<result column="SCHE_ID" property="scheId"/>
+		<result column="TIME_NAME" property="timeName"/>
+		<result column="TIME_ARLAM" property="timeArlam"/>
+		<result column="TIME_LIMIT" property="timeLimit"/>
+		<result column="RE_ARLAM_COUNT" property="reArlamCount"/>
+		<result column="RE_ARLAM_TIME" property="reArlamTime"/>
+	</resultMap>
+	
+
+	<select id="selectByAll" resultType="kr.ac.kopo.record.service.RecordVO">
+		SELECT 
+			TAKE_ID
+			, USER_ID
+			, TIME_ID
+			, TAKE_DATE
+			, TAKE_SUCCESS
+		FROM TAKE_LOG
+		WHERE USER_ID = #{userId}
+	</select>
+	
+	<select id="selectByDate" resultType="kr.ac.kopo.record.service.RecordVO">
+		SELECT 
+			TAKE_ID
+			, USER_ID
+			, TIME_ID
+			, TAKE_DATE
+			, TAKE_SUCCESS
+		FROM TAKE_LOG
+		WHERE DATE(TAKE_DATE) = DATE(NOW())
+			AND USER_ID = #{userId}
+	</select>
+
+</mapper>
