@@ -5,21 +5,21 @@
   
 <mapper namespace="kr.ac.kopo.schedule.service.impl.ScheTimeDAO">
 	<resultMap type="ScheTimeVO" id="scheTimeMap">
-		<id column="sche_id" property="scheId"/>
-		<result column="user_id" property="userId"/>
-		<result column="sche_title" property="scheTitle"/>
-		<result column="sche_select" property="scheSelect"/>
-		<result column="sche_start_date" property="scheStartDate"/>
-		<result column="sche_end_date" property="scheEndDate"/>
-		<result column="sche_date_expires" property="scheDateExpires"/>
+		<id column="time_id" property="timeId"/>
+		<result column="sche_id" property="scheId"/>
+		<result column="time_arlam" property="timeArlam"/>
+		<result column="time_limit" property="timeLimit"/>
+		<result column="re_arlam_count" property="reArlamCount"/>
+		<result column="re_arlam_time" property="reArlamTime"/>
+		<result column="med_location" property="medLocation"/>
 	</resultMap>
 	
 	<select id="list" resultType="ScheTimeVO">
-		SELECT * FROM SCHEDULE
+		SELECT * FROM SCHE_TIME
 	</select>
 
 	<insert id="add">
-	INSERT INTO SCHEDULE
+	INSERT INTO SCHE_TIME
 	(SCHE_ID, USER_ID, SCHE_TITLE, SCHE_SELECT, SCHE_START_DATE, SCHE_END_DATE)
 	VALUES
 	(CONCAT('sche_', LPAD(NEXT VALUE FOR SQ_SCHE, 5, '0')), 'id1', #{scheTitle}, #{scheSelect}, #{scheStartDate}, #{scheEndDate})

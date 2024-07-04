@@ -24,7 +24,7 @@ public class ScheduleController {
 	
 	@GetMapping("/list.do")
 	public String list(UserVO vo, Model model, HttpSession session) {
-//		ScheduleVO mvo = (ScheduleVO) session.getAttribute("loginUser"); //세션에 등록되었는지 확인
+//		String userId = (String)session.getAttribute("loginUser");
 //		vo.setUserId(mvo.getUserId());
 		
 		List<ScheduleVO> lvo = scheduleService.list(vo);

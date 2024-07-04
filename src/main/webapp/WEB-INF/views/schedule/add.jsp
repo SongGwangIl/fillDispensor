@@ -17,11 +17,16 @@
 
 </head>
 
+<!-- 야매 헤더 -->
+<c:out value="${USER_INFO.id}"/> 님 환영합니다.
+<button>로그아웃</button> <br>
+
 <body>
 	<div id=insertList">
 		<form action="${pageContext.request.contextPath}/schedule/add.do" method="post">
 			<fieldset>
 				<legend>스케쥴 등록</legend>
+				
 					<ul>
 						<label for="scheTitle">스케쥴 제목</label>
 						<input type="text" id="scheTitle" name="scheTitle">  
