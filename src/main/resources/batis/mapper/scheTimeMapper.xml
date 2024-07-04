@@ -7,6 +7,7 @@
 	<resultMap type="ScheTimeVO" id="scheTimeMap">
 		<id column="time_id" property="timeId"/>
 		<result column="sche_id" property="scheId"/>
+		<result column="time_name" property="timeName"/>
 		<result column="time_arlam" property="timeArlam"/>
 		<result column="time_limit" property="timeLimit"/>
 		<result column="re_arlam_count" property="reArlamCount"/>
@@ -19,6 +20,7 @@
 	</select>
 
 	<insert id="add">
+	<!-- 아직 수정 안함 -->
 	INSERT INTO SCHE_TIME
 	(SCHE_ID, USER_ID, SCHE_TITLE, SCHE_SELECT, SCHE_START_DATE, SCHE_END_DATE)
 	VALUES
