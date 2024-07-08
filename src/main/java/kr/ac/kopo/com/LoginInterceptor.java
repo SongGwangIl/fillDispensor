@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import kr.ac.kopo.user.UserVO;
+
 
 //핸들러 인터셉터
 //다수의 컨트롤러(핸들러) 실행 전후에 공통적으로 해야하는 일들을 수행하기 위한
@@ -18,9 +20,9 @@ public class LoginInterceptor implements HandlerInterceptor {
 			throws Exception {
 					
 		HttpSession session = request.getSession();
-		LoginVO mvo = (LoginVO)session.getAttribute("loginUser");
-		if(mvo == null) {
-			response.sendRedirect(request.getContextPath() + "/login.do");
+		UserVO uvo = (UserVO)session.getAttribute("loginUser");
+		if(uvo == null) {
+			response.sendRedirect(request.getContextPath() + "/cover");
 			
 			return false;
 		}			

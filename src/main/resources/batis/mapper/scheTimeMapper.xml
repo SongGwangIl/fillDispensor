@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.kopo.schedule.service.impl.ScheTimeDAO">
+	<resultMap type="ScheTimeVO" id="scheTimeMap">
+		<id column="time_id" property="timeId"/>
+		<result column="sche_id" property="scheId"/>
+		<result column="time_name" property="timeName"/>
+		<result column="time_arlam" property="timeArlam"/>
+		<result column="time_limit" property="timeLimit"/>
+		<result column="re_arlam_count" property="reArlamCount"/>
+		<result column="re_arlam_time" property="reArlamTime"/>
+		<result column="med_location" property="medLocation"/>
+	</resultMap>
+	
+	<select id="list" resultType="ScheTimeVO">
+		SELECT * FROM SCHE_TIME
+	</select>
+
+	<insert id="add">
+	<!-- 아직 수정 안함 -->
+	INSERT INTO SCHE_TIME
+	(SCHE_ID, USER_ID, SCHE_TITLE, SCHE_SELECT, SCHE_START_DATE, SCHE_END_DATE)
+	VALUES
+	(CONCAT('sche_', LPAD(NEXT VALUE FOR SQ_SCHE, 5, '0')), 'id1', #{scheTitle}, #{scheSelect}, #{scheStartDate}, #{scheEndDate})
+	</insert>
+
+</mapper>

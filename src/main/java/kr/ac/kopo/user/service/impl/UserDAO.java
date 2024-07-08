@@ -1,15 +1,15 @@
 package kr.ac.kopo.user.service.impl;
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 
-import kr.ac.kopo.com.LoginVO;
+import kr.ac.kopo.user.UserVO;
 
 @Mapper
 public interface UserDAO {
 
-	List<LoginVO> list();
-	
-	LoginVO selectList(LoginVO vo);
+	int add(UserVO vo);
+
+	UserVO login(UserVO vo);
+
+	String checkId(String userId);
 }

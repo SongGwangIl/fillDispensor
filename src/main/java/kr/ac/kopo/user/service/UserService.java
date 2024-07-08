@@ -1,12 +1,12 @@
 package kr.ac.kopo.user.service;
 
-import java.util.List;
-
-import kr.ac.kopo.com.LoginVO;
+import kr.ac.kopo.user.UserVO;
 
 public interface UserService {
 
-	List<LoginVO> list(LoginVO vo);
-	
-	LoginVO selectList(LoginVO vo);
+	int add(UserVO vo);
+
+	UserVO login(UserVO vo);
+
+	String checkId(String userId);
 }
