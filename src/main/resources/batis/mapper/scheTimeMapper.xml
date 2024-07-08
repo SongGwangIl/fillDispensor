@@ -20,11 +20,11 @@
 	</select>
 
 	<insert id="add">
-	<!-- 아직 수정 안함 -->
 	INSERT INTO SCHE_TIME
-	(SCHE_ID, USER_ID, SCHE_TITLE, SCHE_SELECT, SCHE_START_DATE, SCHE_END_DATE)
+	(time_id, sche_id, time_name, time_arlam, time_limit, re_arlam_count, re_arlam_time, med_location)
 	VALUES
-	(CONCAT('sche_', LPAD(NEXT VALUE FOR SQ_SCHE, 5, '0')), 'id1', #{scheTitle}, #{scheSelect}, #{scheStartDate}, #{scheEndDate})
+	(CONCAT('time_', LPAD(NEXT VALUE FOR SQ_TIME, 5, '0'))
+	, #{scheId}, #{timeName}, #{timeArlam}, #{timeLimit}, #{reArlamCount}, #{reArlamTime}, #{medLocation})
 	</insert>
 
 </mapper>

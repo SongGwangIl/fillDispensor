@@ -29,6 +29,15 @@
 						<label for="scheTitle">스케쥴 제목</label>
 						<input type="text" id="scheTitle" name="scheTitle">  
 					</ul>
+
+					<ul>
+						<label for="scheTakeNum">하루 복약횟수</label>
+						<select name="scheTakeNum">
+							<option value=1 selected>1회</option>
+							<option value=2 >2회</option>
+							<option value=3>3회</option>
+						</select>
+					</ul>
 					<ul>
 						<label for="scheStartDate">처방일자</label>
 						<input type="date" id="scheStartDate" name="scheStartDate">	
@@ -36,15 +45,14 @@
 					<ul>
 						<label for="scheSelect">처방기간</label>
 						<select name="scheSelect">
-							<option value="1주" selected>1주</option>
-							<option value="2주">2주</option>
-							<option value="3주">3주</option>
-							<option value="4주">4주</option>
-							<option value="5주">5주</option>
-							<option value="6주">6주</option>
-							<option value="기타">직접 입력</option>
+							<option value=7 selected>1주</option>
+							<option value=14>2주</option>
+							<option value=21>3주</option>
+							<option value=28>4주</option>
+							<option value=35>5주</option>
+							<option value=42>6주</option>
 						</select>	
-						스크립트 추가예정
+						<br>직접 선택은 스크립트 어떻게 할지 아직 구상못함...
 					</ul>
 					<ul>
 						<label for="scheEndDate">만료일자</label>
