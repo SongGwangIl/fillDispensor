@@ -29,12 +29,31 @@ public class RecordController{
 		String userId = uvo.getUserId();
 
 		List<RecordVO> listByAll = recordService.selectByAll(userId);
-		List<RecordVO> listByDate = recordService.selectByDate(userId);
+		List<RecordVO> listByToday = recordService.selectByToday(userId);
 		
 		model.addAttribute("recordSelectByAll", listByAll);
-		model.addAttribute("recordSelectByDate", listByDate);
+		model.addAttribute("recordSelectByToday", listByToday);
 
 		return "record/list";
+	}
+
+	
+	@GetMapping("/select.do")
+	public String select(RecordVO vo, Model model, HttpSession session) {
+			
+		//세션객체에 저장된 로그인 정보에서 id를 받아옴
+		UserVO uvo = (UserVO) session.getAttribute("loginUser");
+		String userId = uvo.getUserId();
+		
+		//vo로 받아온 파라미터 takeDate
+		String takeDate = vo.getTakeDate();
+
+		List<RecordVO> listByDate = recordService.selectByDate(takeDate, userId);
+			
+		model.addAttribute("recordSelectByDate", listByDate);
+		model.addAttribute("takeDate", takeDate);
+
+		return "record/select";
 	}
 	
 }

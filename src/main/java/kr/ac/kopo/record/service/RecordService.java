@@ -4,7 +4,10 @@ import java.util.List;
 
 public interface RecordService {
 	
-	List<RecordVO> selectByDate(String userId);
+	List<RecordVO> selectByToday(String userId);
+	
 	List<RecordVO> selectByAll(String userId);
+	
+	List<RecordVO> selectByDate(String takeDate, String userId);
 
 }

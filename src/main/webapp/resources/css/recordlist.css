@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+	h1 {
+		font-size: 25px;
+		width : 300px;
+		margin : 0 auto;
+		text-align: center;
+	}
+	table{
+		width: 1000px;
+		font-size: 15px;
+		text-align: center;
+		border: 1px solid black;
+		border-collapse: collapse;
+		margin: 0 auto;
+    }
+	table th{
+		border: 1px solid black;
+		padding : 5px;
+	}
+	table td{
+		border: 1px solid black;
+		padding : 5px;
+	}
+	p {
+		text-align : center;
+		margin : 0 auto;
+	}
+	#container {
+		width : 1000px;
+		margin : 0 auto;
+	}

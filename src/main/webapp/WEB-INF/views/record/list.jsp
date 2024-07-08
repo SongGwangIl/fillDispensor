@@ -8,112 +8,132 @@
 <head>
 <meta charset="UTF-8">
 <title> 복약 기록 조회 </title>
+<link href="${pageContext.request.contextPath}/resources/css/recordlist.css" rel="stylesheet">
 <style>
-	h1 {
-		font-size: 25px;
-		width : 300px;
-		margin : 0 auto;
-	}
-	table{
-		width: 650px;
-		font-size: 15px;
-		text-align: center;
-		border: 1px solid black;
-		border-collapse: collapse;
-		margin: 0 auto;
-    }
-	table th{
-		border: 1px solid black;
-		padding : 5px;
-	}
-	table td{
-		border: 1px solid black;
-		padding : 5px;
-	}
-	p {
-		text-align : center;
-		margin : 0 auto;
-	}
 </style>
 </head>
 <body>
 
 <p><br>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/> </p>
+<br><br>
 
-<h1> 오늘의 복약 로그 조회 </h1>
-<table>
-	<thead>
-		<tr>
-			<th>
-				복약로그 ID
-			</th>
-			<th>
-				복약한 사용자 ID
-			</th>
-			<th>
-				복약한 시간 알림 ID
-			</th>
-			<th>
-				복약한 날짜
-			</th>
-			<th>
-				복약 성공 여부
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="dvo" items="${recordSelectByDate}">
-		<tr>
-			<td> ${dvo.takeId} </td>
-			<td> ${dvo.userId} </td>
-			<td> ${dvo.timeId} </td>
-			<td> <fmt:formatDate value="${dvo.takeDate}" pattern="MM월 dd일 HH:mm 복용"/> </td>
-			<td> ${dvo.takeSuccess} </td>
-		</tr>
-		</c:forEach>
-	</tbody>
-</table>
+<!-- 조회 날짜 선택 -->
+<div id="container">
+<form action="${pageContext.request.contextPath}/record/select.do" method="get">
+	<label for="takeDate"> 조회 날짜 선택 : </label>
+	<input type="date" id="takeDate" name="takeDate">
+	<input type="submit" value="조회">
+</form> <br><br>
 
 
-<h1> 복약 로그 모두 조회 </h1>
-<table>
-	<thead>
-		<tr>
-			<th>
-				복약로그 ID
-			</th>
-			<th>
-				복약한 사용자 ID
-			</th>
-			<th>
-				복약한 시간 알림 ID
-			</th>
-			<th>
-				복약한 날짜
-			</th>
-			<th>
-				복약 성공 여부
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="avo" items="${recordSelectByAll}">
-		<tr>
-			<td> ${avo.takeId} </td>
-			<td> ${avo.userId} </td>
-			<td> ${avo.timeId} </td>
-			<td> <fmt:formatDate value="${avo.takeDate}" pattern="MM월 dd일 HH:mm 복용"/> </td>
-			<td> ${avo.takeSuccess} </td>
-		</tr>
-		</c:forEach>
-	</tbody>
-</table>
+<!-- 오늘날짜 디폴트 값 로그 조회 -->
+<h1> 오늘의 복용기록 </h1>
+<c:choose>
+	<c:when test="${recordSelectByToday.isEmpty()}">
+		<p> 조회할 복약 기록이 없습니다. </p>
+	</c:when>
+	<c:otherwise>
+		<table>
+			<thead>
+				<tr>
+					<th>
+						복약로그 ID
+					</th>
+					<th>
+						사용자 ID
+					</th>
+					<th>
+						복용한 약품이름
+					</th>
+					<th>
+						복약한 시간알림 ID
+					</th>
+					<th>
+						복약한 시간 이름
+					</th>
+					<th>
+						복약 날짜
+					</th>
+					<th>
+						복약 성공 여부
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="tvo" items="${recordSelectByToday}">
+				<tr>
+					<td> ${tvo.takeId} </td>
+					<td> ${tvo.userId} </td>
+					<c:forEach var="sdl" items="${tvo.scheduleList}"><td> ${sdl.scheTitle}</td></c:forEach>
+					<td> ${tvo.timeId} </td>
+					<c:forEach var="stl" items="${tvo.scheTimeList}"><td> ${stl.timeName}</td></c:forEach>
+					<td> ${tvo.takeDate} </td>
+					<td> ${tvo.takeSuccess} </td>
+				</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</c:otherwise>
+</c:choose>
+<br><br>
 
+
+<h1> 기간별 복용기록 조회 </h1>
+<c:choose>
+	<c:when test="${recordSelectByAll.isEmpty()}">
+		<p> 조회할 복약 기록이 없습니다. </p>
+	</c:when>
+	<c:otherwise>
+		<table>
+			<thead>
+				<tr>
+					<th>
+						복약로그 ID
+					</th>
+					<th>
+						사용자 ID
+					</th>
+					<th>
+						복용한 약품이름
+					</th>
+					<th>
+						복약한 시간알림 ID
+					</th>
+					<th>
+						복약한 시간 이름
+					</th>
+					<th>
+						복약 날짜
+					</th>
+					<th>
+						복약 성공 여부
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="avo" items="${recordSelectByAll}">
+				<tr>
+					<td> ${avo.takeId} </td>
+					<td> ${avo.userId} </td>
+					<c:forEach var="sdl" items="${avo.scheduleList}"><td> ${sdl.scheTitle}</td></c:forEach>
+					<td> ${avo.timeId} </td>
+					<c:forEach var="stl" items="${avo.scheTimeList}"><td> ${stl.timeName}</td></c:forEach>
+					<td> ${avo.takeDate} </td>
+					<td> ${avo.takeSuccess} </td>
+				</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</c:otherwise>
+</c:choose>
+
+<br><br><br>
+<hr>
 <p> 추가 구현해야 할 기능 </p>
 <p> : 로그인 정보를 받아서 로그인 한 사용자의 로그만 조회할 수 있도록 (구현 완료)</p>
 <p> : 브라우저에서 date 값을 설정할 수 있는 장치 (원하는 날짜로 바꿔서 조회) </p>
 
-
+</div>
 </body>
 </html>
